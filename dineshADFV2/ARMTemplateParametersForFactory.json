@@ -1,0 +1,27 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "dineshADFV2"
+		},
+		"AzureBlobStorage1_connectionString": {
+			"value": ""
+		},
+		"AzureBlobStorageTgt_connectionString": {
+			"value": ""
+		},
+		"AzureBlob1_properties_typeProperties_fileName": {
+			"value": "transactions.txt"
+		},
+		"AzureBlob1_properties_typeProperties_folderPath": {
+			"value": "tutorial/Source"
+		},
+		"AzureBlob2tgt_properties_typeProperties_fileName": {
+			"value": ""
+		},
+		"AzureBlob2tgt_properties_typeProperties_folderPath": {
+			"value": "tutorial"
+		}
+	}
+}
