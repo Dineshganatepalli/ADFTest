@@ -1,0 +1,36 @@
+{
+	"name": "AzureBlobTargetDS",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorageTargetLS",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"folderPath": "ADFTarget",
+				"container": "adfdemocontainer"
+			}
+		},
+		"schema": {
+			"type": "object",
+			"properties": {
+				"id": {
+					"type": "string"
+				},
+				"year": {
+					"type": "string"
+				},
+				"brand": {
+					"type": "string"
+				},
+				"color": {
+					"type": "string"
+				}
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
