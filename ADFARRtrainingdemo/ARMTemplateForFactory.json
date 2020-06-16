@@ -94,7 +94,8 @@
 			"properties": {
 				"activities": [
 					{
-						"name": "Copy data1",
+						"name": "Blobcopyactivity",
+						"description": "Adding Description and changing Activityname",
 						"type": "Copy",
 						"dependsOn": [],
 						"policy": {
