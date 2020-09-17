@@ -1,0 +1,46 @@
+{
+	"name": "Sourcedatasetblobdemo",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "DemoinkedserviceSource",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "sample1.json",
+				"folderPath": "HiveInput/source1",
+				"container": "dineshhadoop"
+			}
+		},
+		"schema": {
+			"type": "object",
+			"properties": {
+				"modifiedby": {
+					"type": "string"
+				},
+				"modifiedon": {
+					"type": "string"
+				},
+				"hpi_noteshistory": {
+					"type": "string"
+				},
+				"createdon": {
+					"type": "string"
+				},
+				"hpi_subject": {
+					"type": "string"
+				},
+				"hpi_caseid": {
+					"type": "string"
+				},
+				"incidentid": {
+					"type": "string"
+				}
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

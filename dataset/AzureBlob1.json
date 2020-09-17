@@ -1,0 +1,43 @@
+{
+	"name": "AzureBlob1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureBlob",
+		"structure": [
+			{
+				"name": "filename",
+				"type": "String"
+			},
+			{
+				"name": "foldername",
+				"type": "String"
+			},
+			{
+				"name": "activity",
+				"type": "String"
+			},
+			{
+				"name": "type",
+				"type": "String"
+			}
+		],
+		"typeProperties": {
+			"format": {
+				"type": "JsonFormat",
+				"jsonPathDefinition": {
+					"filename": "$.['filename']",
+					"foldername": "$.['foldername']",
+					"activity": "$.['activity']",
+					"type": "$.['type']"
+				}
+			},
+			"fileName": "pipline.json",
+			"folderPath": "dineshtgtblob/Source"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

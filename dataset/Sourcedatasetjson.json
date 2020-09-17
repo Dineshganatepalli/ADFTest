@@ -1,0 +1,711 @@
+{
+	"name": "Sourcedatasetjson",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "dataflowsourcejson",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "refFile.json",
+				"folderPath": "HiveInput/source1",
+				"container": "dineshhadoop"
+			}
+		},
+		"schema": {
+			"type": "object",
+			"properties": {
+				"_id": {
+					"type": "object",
+					"properties": {
+						"$oid": {
+							"type": "string"
+						}
+					}
+				},
+				"associationId": {
+					"type": "string"
+				},
+				"ruleCode": {
+					"type": "string"
+				},
+				"candidateId": {
+					"type": "string"
+				},
+				"eventType": {
+					"type": "string"
+				},
+				"status": {
+					"type": "string"
+				},
+				"errorCode": {
+					"type": "string"
+				},
+				"associationData": {
+					"type": "object",
+					"properties": {
+						"drivers": {
+							"type": "array",
+							"items": {
+								"type": "object",
+								"properties": {
+									"channelType": {
+										"type": "string"
+									},
+									"claimLossDetailDTO": {
+										"type": "object",
+										"properties": {
+											"partyID": {
+												"type": "string"
+											},
+											"firstName": {
+												"type": "string"
+											},
+											"lastName": {
+												"type": "string"
+											},
+											"status": {
+												"type": "string"
+											}
+										}
+									},
+									"violationDetailDTO": {
+										"type": "object",
+										"properties": {
+											"partyID": {
+												"type": "string"
+											},
+											"firstName": {
+												"type": "string"
+											},
+											"lastName": {
+												"type": "string"
+											},
+											"race": {
+												"type": "string"
+											},
+											"mvrViolations": {
+												"type": "array",
+												"items": {
+													"type": "object",
+													"properties": {
+														"active": {
+															"type": "boolean"
+														}
+													}
+												}
+											},
+											"standardViolations": {
+												"type": "array",
+												"items": {
+													"type": "object",
+													"properties": {
+														"speedingInformation": {
+															"type": "array",
+															"items": {
+																"type": "object",
+																"properties": {
+																	"active": {
+																		"type": "boolean"
+																	}
+																}
+															}
+														},
+														"svc": {
+															"type": "string"
+														},
+														"csc": {
+															"type": "string"
+														},
+														"svcDescription": {
+															"type": "string"
+														},
+														"active": {
+															"type": "boolean"
+														}
+													}
+												}
+											},
+											"middleName": {
+												"type": "string"
+											},
+											"dmvAccount": {
+												"type": "string"
+											},
+											"hairColor": {
+												"type": "string"
+											},
+											"status": {
+												"type": "string"
+											},
+											"driverRiskDetailDTO": {
+												"type": "object",
+												"properties": {
+													"partyID": {
+														"type": "string"
+													},
+													"firstName": {
+														"type": "string"
+													},
+													"middleName": {
+														"type": "string"
+													},
+													"lastName": {
+														"type": "string"
+													},
+													"orderMVR": {
+														"type": "string"
+													},
+													"active": {
+														"type": "boolean"
+													}
+												}
+											}
+										}
+									},
+									"verifiableRecord": {
+										"type": "string"
+									},
+									"violationPoints": {
+										"type": "string"
+									},
+									"creditReportDetails": {
+										"type": "object"
+									},
+									"driverId": {
+										"type": "string"
+									},
+									"drivingLicenseNumber": {
+										"type": "string"
+									},
+									"firstName": {
+										"type": "string"
+									},
+									"lastName": {
+										"type": "string"
+									},
+									"dateOfBirth": {
+										"type": "string"
+									},
+									"partyId": {
+										"type": "string"
+									},
+									"parentId": {
+										"type": "string"
+									},
+									"partyContactDTOS": {
+										"type": "array",
+										"items": {
+											"type": "object",
+											"properties": {
+												"phoneNumber": {
+													"type": "string"
+												},
+												"emailAddress": {
+													"type": "string"
+												}
+											}
+										}
+									},
+									"numberOfAccidents": {
+										"type": "integer"
+									},
+									"numberOfViolations": {
+										"type": "integer"
+									},
+									"relationship": {
+										"type": "string"
+									},
+									"licenseExpDate": {
+										"type": "string"
+									}
+								}
+							}
+						},
+						"vehicles": {
+							"type": "array",
+							"items": {
+								"type": "object",
+								"properties": {
+									"parentId": {
+										"type": "string"
+									},
+									"vehicleId": {
+										"type": "string"
+									},
+									"vin": {
+										"type": "string"
+									},
+									"vehicleYear": {
+										"type": "integer"
+									},
+									"make": {
+										"type": "string"
+									},
+									"model": {
+										"type": "string"
+									},
+									"annualMileage": {
+										"type": "string"
+									},
+									"vehicleType": {
+										"type": "string"
+									},
+									"vehicleOwnershipType": {
+										"type": "string"
+									},
+									"parkingType": {
+										"type": "string"
+									},
+									"channelType": {
+										"type": "string"
+									},
+									"externalReferenceId": {
+										"type": "string"
+									},
+									"errorCode": {
+										"type": "string"
+									},
+									"vehicleRateSymbolDTOS": {
+										"type": "array",
+										"items": {
+											"type": "object",
+											"properties": {
+												"type": {
+													"type": "string"
+												},
+												"score": {
+													"type": "string"
+												},
+												"active": {
+													"type": "boolean"
+												}
+											}
+										}
+									},
+									"premiumDetails": {
+										"type": "object",
+										"properties": {
+											"grossCommissions": {
+												"type": "object",
+												"properties": {
+													"amount": {
+														"type": "string"
+													},
+													"currency": {
+														"type": "string"
+													}
+												}
+											},
+											"grossPremium": {
+												"type": "object",
+												"properties": {
+													"amount": {
+														"type": "string"
+													},
+													"currency": {
+														"type": "string"
+													}
+												}
+											},
+											"grossTaxes": {
+												"type": "object",
+												"properties": {
+													"amount": {
+														"type": "string"
+													},
+													"currency": {
+														"type": "string"
+													}
+												}
+											},
+											"totalPremium": {
+												"type": "object",
+												"properties": {
+													"amount": {
+														"type": "string"
+													},
+													"currency": {
+														"type": "string"
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						},
+						"submissionId": {
+							"type": "string"
+						},
+						"periodStartDate": {
+							"type": "string"
+						},
+						"periodEndDate": {
+							"type": "string"
+						},
+						"submissionStatus": {
+							"type": "string"
+						},
+						"submissionType": {
+							"type": "string"
+						},
+						"lobType": {
+							"type": "string"
+						},
+						"primaryInsuredDetails": {
+							"type": "object",
+							"properties": {
+								"drivingLicenseNumber": {
+									"type": "string"
+								},
+								"firstName": {
+									"type": "string"
+								},
+								"lastName": {
+									"type": "string"
+								},
+								"dateOfBirth": {
+									"type": "string"
+								},
+								"partyType": {
+									"type": "string"
+								},
+								"partyId": {
+									"type": "string"
+								},
+								"referenceId": {
+									"type": "string"
+								},
+								"partyContactDTOS": {
+									"type": "array",
+									"items": {
+										"type": "object",
+										"properties": {
+											"phoneNumber": {
+												"type": "string"
+											},
+											"emailAddress": {
+												"type": "string"
+											},
+											"address": {
+												"type": "object",
+												"properties": {
+													"addressLine1": {
+														"type": "string"
+													},
+													"city": {
+														"type": "string"
+													},
+													"state": {
+														"type": "string"
+													},
+													"zipCode": {
+														"type": "string"
+													},
+													"latitude": {
+														"type": "string"
+													},
+													"longitude": {
+														"type": "string"
+													}
+												}
+											},
+											"contactType": {
+												"type": "string"
+											}
+										}
+									}
+								},
+								"numberOfAccidents": {
+									"type": "integer"
+								},
+								"numberOfViolations": {
+									"type": "integer"
+								},
+								"licenseExpDate": {
+									"type": "string"
+								}
+							}
+						},
+						"activityId": {
+							"type": "string"
+						},
+						"offerings": {
+							"type": "object",
+							"properties": {
+								"offeringId": {
+									"type": "string"
+								},
+								"offeringName": {
+									"type": "string"
+								},
+								"vehicleType": {
+									"type": "string"
+								},
+								"coverages": {
+									"type": "array",
+									"items": {
+										"type": "object",
+										"properties": {
+											"coverageName": {
+												"type": "string"
+											},
+											"indemnityPerEvent": {
+												"type": "string"
+											},
+											"indemnityInAggregate": {
+												"type": "string"
+											},
+											"deductible": {
+												"type": "string"
+											},
+											"level": {
+												"type": "string"
+											},
+											"vehicleAgeLimit": {
+												"type": "integer"
+											},
+											"lumpSumPayment": {
+												"type": "string"
+											},
+											"coverageLineItems": {
+												"type": "array",
+												"items": {
+													"type": "object",
+													"properties": {
+														"characteristic": {
+															"type": "string"
+														},
+														"amount": {
+															"type": "string"
+														}
+													}
+												}
+											},
+											"premiumDetails": {
+												"type": "object",
+												"properties": {
+													"grossCommissions": {
+														"type": "object",
+														"properties": {
+															"amount": {
+																"type": "string"
+															},
+															"currency": {
+																"type": "string"
+															}
+														}
+													},
+													"grossPremium": {
+														"type": "object",
+														"properties": {
+															"amount": {
+																"type": "string"
+															},
+															"currency": {
+																"type": "string"
+															}
+														}
+													},
+													"grossTaxes": {
+														"type": "object",
+														"properties": {
+															"amount": {
+																"type": "string"
+															},
+															"currency": {
+																"type": "string"
+															}
+														}
+													},
+													"totalPremium": {
+														"type": "object",
+														"properties": {
+															"amount": {
+																"type": "string"
+															},
+															"currency": {
+																"type": "string"
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								},
+								"features": {
+									"type": "array",
+									"items": {
+										"type": "object",
+										"properties": {
+											"feature": {
+												"type": "string"
+											},
+											"included": {
+												"type": "boolean"
+											},
+											"indemnityPerEvent": {
+												"type": "string"
+											},
+											"indemnityInAggregate": {
+												"type": "string"
+											},
+											"deductible": {
+												"type": "string"
+											},
+											"level": {
+												"type": "string"
+											},
+											"lumpSumPayment": {
+												"type": "string"
+											},
+											"vehicleAgeLimit": {
+												"type": "integer"
+											}
+										}
+									}
+								},
+								"offeringStartDate": {
+									"type": "string"
+								},
+								"offeringEndDate": {
+									"type": "string"
+								}
+							}
+						},
+						"totalPremium": {
+							"type": "object",
+							"properties": {
+								"amount": {
+									"type": "string"
+								},
+								"currency": {
+									"type": "string"
+								}
+							}
+						},
+						"policyScoreDetailDTO": {
+							"type": "object",
+							"properties": {
+								"firstName": {
+									"type": "string"
+								},
+								"lastName": {
+									"type": "string"
+								},
+								"partyID": {
+									"type": "string"
+								},
+								"model": {
+									"type": "object",
+									"properties": {
+										"section": {
+											"type": "array",
+											"items": {
+												"type": "object",
+												"properties": {
+													"items": {
+														"type": "array",
+														"items": {
+															"type": "object",
+															"properties": {
+																"itemDetails": {
+																	"type": "array",
+																	"items": {
+																		"type": "object",
+																		"properties": {
+																			"individualID": {
+																				"type": "string"
+																			},
+																			"status": {
+																				"type": "string"
+																			}
+																		}
+																	}
+																},
+																"description": {
+																	"type": "string"
+																},
+																"itemScore": {
+																	"type": "string"
+																},
+																"csid": {
+																	"type": "string"
+																},
+																"active": {
+																	"type": "boolean"
+																}
+															}
+														}
+													},
+													"sectionScore": {
+														"type": "string"
+													}
+												}
+											}
+										},
+										"policyScore": {
+											"type": "string"
+										}
+									}
+								},
+								"submissionId": {
+									"type": "string"
+								},
+								"status": {
+									"type": "string"
+								}
+							}
+						},
+						"addressRiskDTO": {
+							"type": "object",
+							"properties": {
+								"partyId": {
+									"type": "string"
+								},
+								"risk": {
+									"type": "string"
+								}
+							}
+						},
+						"externalReferenceId": {
+							"type": "string"
+						},
+						"policyEffectiveDate": {
+							"type": "string"
+						}
+					}
+				},
+				"lastModifiedBy": {
+					"type": "null"
+				},
+				"lastModifiedDate": {
+					"type": "object",
+					"properties": {
+						"$date": {
+							"type": "integer"
+						}
+					}
+				},
+				"version": {
+					"type": "integer"
+				},
+				"createTime": {
+					"type": "string"
+				},
+				"updateteTime": {
+					"type": "string"
+				},
+				"_class": {
+					"type": "string"
+				}
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

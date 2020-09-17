@@ -1,0 +1,124 @@
+{
+	"name": "copydatafromSQL",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy data1",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "SqlServerSource",
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
+					},
+					"sink": {
+						"type": "ParquetSink",
+						"storeSettings": {
+							"type": "AzureBlobStorageWriteSettings"
+						}
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "FIRST NAME ",
+									"type": "String"
+								},
+								"sink": {
+									"name": "FIRST NAME ",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "LAST NAME",
+									"type": "String"
+								},
+								"sink": {
+									"name": "LAST NAME",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "USERNAME ",
+									"type": "String"
+								},
+								"sink": {
+									"name": "USERNAME ",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "EMAIL ADDRESS",
+									"type": "String"
+								},
+								"sink": {
+									"name": "EMAIL ADDRESS",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PHONE NUMBER",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PHONE NUMBER",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "STATE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "STATE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ZIP",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ZIP",
+									"type": "String"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "SqlServerTableDS",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "AzureBlobParquetDS",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2020-06-11T11:31:18Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

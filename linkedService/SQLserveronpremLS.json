@@ -1,0 +1,16 @@
+{
+	"name": "SQLserveronpremLS",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "SqlServer",
+		"typeProperties": {
+			"connectionString": "integrated security=False;data source=DIGANTEP;initial catalog=TestDB;user id=sa",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiI3OWQ4NWQzOS04YTlkLTRiOWYtOTczNC02MGM5NDQyMGU4ZDMiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "SelfhosterIR",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}

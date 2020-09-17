@@ -1,0 +1,41 @@
+{
+	"name": "lookuptest",
+	"properties": {
+		"activities": [
+			{
+				"name": "Lookup1",
+				"type": "Lookup",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "JsonSource",
+						"storeSettings": {
+							"type": "HttpReadSettings",
+							"requestMethod": "POST",
+							"requestBody": "{        \"adlsFolder\": \"LOOKUPACTIVITY/TEST\",\n        \"dbName\": \"DSN9\",\n        \"delimiter\": \",\",        \n\"fileFormat\": \"CSV\",        \n\"fileName\": \"lookupactivity.csv\",\n       \"hostName\": \"dsn9drda.wal-mart.com\",\n        \"port\": 59858,\n        \"query\":\"SELECT * FROM GBXCLAIM.CLAIM WHERE POST_DATE >= CURRENT DATE - 150 DAYS AND POST_DATE <= CURRENT DATE -1 DAY WITH UR\" ,        \"userName\": \"DB2PP2WW\"    }",
+							"requestTimeout": ""
+						},
+						"formatSettings": {
+							"type": "JsonReadSettings"
+						}
+					},
+					"dataset": {
+						"referenceName": "Newhttprequest",
+						"type": "DatasetReference"
+					}
+				}
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2020-08-13T18:20:53Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

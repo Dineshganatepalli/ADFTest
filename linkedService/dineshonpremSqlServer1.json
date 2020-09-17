@@ -1,0 +1,16 @@
+{
+	"name": "dineshonpremSqlServer1",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "SqlServer",
+		"typeProperties": {
+			"connectionString": "integrated security=False;data source=DIGANTEP;initial catalog=TestDB;user id=sa",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiI5ZDBiM2E1ZS1hYzJkLTQ3N2EtOGIyMi00MzM0NDMzOWRiMTciLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "integrationRuntime1",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}

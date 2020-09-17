@@ -1,0 +1,43 @@
+{
+	"name": "pipelinewebactivity",
+	"properties": {
+		"activities": [
+			{
+				"name": "WebActivity",
+				"type": "WebActivity",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"url": "https://dineshsqldb.documents.azure.com:443/",
+					"method": "GET",
+					"linkedServices": [
+						{
+							"referenceName": "CosmosDbLS",
+							"type": "LinkedServiceReference"
+						}
+					],
+					"datasets": [
+						{
+							"referenceName": "DocumentDbCollection1",
+							"type": "DatasetReference"
+						}
+					],
+					"authentication": {
+						"type": "MSI",
+						"resource": "7F4lTtEkrCFwbc1bSdWhmHlh1nNAK3CmPnTDmVrsrIxQB5Lfb07JgHOzDwTsEPDHX7Pf3HZks0i19VsOo7OjiQ=="
+					}
+				}
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2019-05-29T12:56:42Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

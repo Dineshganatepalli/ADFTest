@@ -1,0 +1,32 @@
+{
+	"name": "CosmosDbSqlApiCollectiontestDS",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "CosmosDbtestLS",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "CosmosDbSqlApiCollection",
+		"schema": {
+			"type": "object",
+			"properties": {
+				"sname": {
+					"type": "string"
+				},
+				"Company": {
+					"type": "string"
+				},
+				"Experience": {
+					"type": "integer"
+				},
+				"Father": {
+					"type": "string"
+				}
+			}
+		},
+		"typeProperties": {
+			"collectionName": "class"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

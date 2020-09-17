@@ -1,0 +1,37 @@
+{
+	"name": "Functionpipeline",
+	"properties": {
+		"activities": [
+			{
+				"name": "Azure Function2",
+				"type": "AzureFunctionActivity",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"functionName": "HttpTrigger1",
+					"method": "GET"
+				},
+				"linkedServiceName": {
+					"referenceName": "AzureFunction3",
+					"type": "LinkedServiceReference"
+				}
+			}
+		],
+		"parameters": {
+			"FunctionKey": {
+				"type": "string",
+				"defaultValue": "123"
+			}
+		},
+		"annotations": [],
+		"lastPublishTime": "2019-05-31T14:36:37Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

@@ -1,0 +1,139 @@
+{
+	"name": "Pipelinewildch",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy Data1",
+				"type": "Copy",
+				"dependsOn": [
+					{
+						"activity": "Set Variable1",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "AzureBlobStorageReadSettings",
+							"recursive": true,
+							"wildcardFileName": {
+								"value": "@{concat(variables('name'), variables('Date'), variables('filepattern'))}",
+								"type": "Expression"
+							},
+							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings"
+						}
+					},
+					"sink": {
+						"type": "DelimitedTextSink",
+						"storeSettings": {
+							"type": "AzureBlobStorageWriteSettings"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ".txt"
+						}
+					},
+					"enableStaging": false
+				},
+				"inputs": [
+					{
+						"referenceName": "DatasetDelimitedText",
+						"type": "DatasetReference",
+						"parameters": {
+							"Env": "dev",
+							"Environment": "Dev"
+						}
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "TargetDelimitedText",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "SetName",
+				"type": "SetVariable",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "name",
+					"value": "Dinesh_"
+				}
+			},
+			{
+				"name": "SetDate",
+				"type": "SetVariable",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "Date",
+					"value": "20190524_"
+				}
+			},
+			{
+				"name": "Set Variable1",
+				"type": "SetVariable",
+				"dependsOn": [
+					{
+						"activity": "SetName",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					},
+					{
+						"activity": "SetDate",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "Filename",
+					"value": {
+						"value": "@concat(variables('name'), variables('Date'),variables('filepattern'))",
+						"type": "Expression"
+					}
+				}
+			}
+		],
+		"variables": {
+			"name": {
+				"type": "String",
+				"defaultValue": "Dinesh"
+			},
+			"Date": {
+				"type": "String",
+				"defaultValue": "20190624"
+			},
+			"Filename": {
+				"type": "String",
+				"defaultValue": "dummy"
+			},
+			"filepattern": {
+				"type": "String",
+				"defaultValue": "*.txt"
+			}
+		},
+		"annotations": [],
+		"lastPublishTime": "2019-05-30T18:22:27Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

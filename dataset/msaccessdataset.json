@@ -1,0 +1,15 @@
+{
+	"name": "msaccessdataset",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "MsaccessOdbc",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "RelationalTable",
+		"typeProperties": {
+			"tableName": "`emp`"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

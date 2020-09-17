@@ -1,0 +1,193 @@
+{
+	"name": "Targetdatasetblobdemo",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "DemoinkedserviceSource",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"folderPath": "HiveOutput",
+				"container": "dineshhadoop"
+			}
+		},
+		"schema": {
+			"type": "object",
+			"properties": {
+				"modifiedby": {
+					"type": "string"
+				},
+				"modifiedon": {
+					"type": "string"
+				},
+				"hpi_noteshistory": {
+					"type": "string"
+				},
+				"createdon": {
+					"type": "string"
+				},
+				"hpi_subject": {
+					"type": "string"
+				},
+				"hpi_caseid": {
+					"type": "string"
+				},
+				"incidentid": {
+					"type": "string"
+				},
+				"EventProcessedUtcTime": {
+					"type": "string"
+				},
+				"PartitionId": {
+					"type": "integer"
+				},
+				"BlobName": {
+					"type": "string"
+				},
+				"BlobLastModifiedUtcTime": {
+					"type": "string"
+				},
+				"name": {
+					"type": "string"
+				},
+				"type": {
+					"type": "string"
+				},
+				"dependsOn": {
+					"type": "array",
+					"items": {
+						"type": "object",
+						"properties": {
+							"activity": {
+								"type": "string"
+							},
+							"dependencyConditions": {
+								"type": "array",
+								"items": {
+									"type": "string"
+								}
+							}
+						}
+					}
+				},
+				"policy": {
+					"type": "object",
+					"properties": {
+						"timeout": {
+							"type": "string"
+						},
+						"retry": {
+							"type": "integer"
+						},
+						"retryIntervalInSeconds": {
+							"type": "integer"
+						},
+						"secureOutput": {
+							"type": "boolean"
+						},
+						"secureInput": {
+							"type": "boolean"
+						}
+					}
+				},
+				"userProperties": {
+					"type": "array"
+				},
+				"typeProperties": {
+					"type": "object",
+					"properties": {
+						"dataset": {
+							"type": "object",
+							"properties": {
+								"referenceName": {
+									"type": "string"
+								},
+								"type": {
+									"type": "string"
+								},
+								"parameters": {
+									"type": "object",
+									"properties": {
+										"PartitionName": {
+											"type": "object",
+											"properties": {
+												"value": {
+													"type": "string"
+												},
+												"type": {
+													"type": "string"
+												}
+											}
+										},
+										"SubpartitionName": {
+											"type": "object",
+											"properties": {
+												"value": {
+													"type": "string"
+												},
+												"type": {
+													"type": "string"
+												}
+											}
+										},
+										"TrgtTableName": {
+											"type": "object",
+											"properties": {
+												"value": {
+													"type": "string"
+												},
+												"type": {
+													"type": "string"
+												}
+											}
+										},
+										"FileName": {
+											"type": "object",
+											"properties": {
+												"value": {
+													"type": "string"
+												},
+												"type": {
+													"type": "string"
+												}
+											}
+										},
+										"FolderName": {
+											"type": "object",
+											"properties": {
+												"value": {
+													"type": "string"
+												},
+												"type": {
+													"type": "string"
+												}
+											}
+										}
+									}
+								}
+							}
+						},
+						"enableLogging": {
+							"type": "boolean"
+						},
+						"storeSettings": {
+							"type": "object",
+							"properties": {
+								"type": {
+									"type": "string"
+								},
+								"recursive": {
+									"type": "boolean"
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

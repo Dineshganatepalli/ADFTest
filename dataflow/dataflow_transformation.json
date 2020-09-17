@@ -1,0 +1,39 @@
+{
+	"name": "dataflow_transformation",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "ADLSgen2source1",
+						"type": "DatasetReference"
+					},
+					"name": "source1"
+				},
+				{
+					"dataset": {
+						"referenceName": "ADLSgen2source2",
+						"type": "DatasetReference"
+					},
+					"name": "source2"
+				}
+			],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "ADLSgen2source1",
+						"type": "DatasetReference"
+					},
+					"name": "sink1"
+				}
+			],
+			"transformations": [
+				{
+					"name": "Union1"
+				}
+			],
+			"script": "source(output(\n\t\tmodifiedby as string,\n\t\tmodifiedon as string,\n\t\thpi_noteshistory as string,\n\t\tcreatedon as string,\n\t\thpi_subject as string,\n\t\thpi_caseid as string,\n\t\tincidentid as string\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: true,\n\tignoreNoFilesFound: false,\n\tsingleDocument: true) ~> source1\nsource(output(\n\t\tmodifiedby as string,\n\t\tmodifiedon as string,\n\t\thpi_noteshistory as string,\n\t\tcreatedon as string,\n\t\thpi_subject as string,\n\t\thpi_caseid as string,\n\t\tincidentid as string\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false,\n\tsingleDocument: true) ~> source2\nsource1, source2 union(byName: true)~> Union1\nUnion1 sink(input(\n\t\tmodifiedby as string,\n\t\tmodifiedon as string,\n\t\thpi_noteshistory as string,\n\t\tcreatedon as string,\n\t\thpi_subject as string,\n\t\thpi_caseid as string,\n\t\tincidentid as string\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true) ~> sink1"
+		}
+	}
+}

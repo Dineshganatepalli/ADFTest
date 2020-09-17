@@ -1,0 +1,46 @@
+{
+	"name": "ADLSgen2source1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureDataLakeStorage2_LS",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "sample1.json",
+				"folderPath": "Sourcefile",
+				"fileSystem": "containertest"
+			}
+		},
+		"schema": {
+			"type": "object",
+			"properties": {
+				"modifiedby": {
+					"type": "string"
+				},
+				"modifiedon": {
+					"type": "string"
+				},
+				"hpi_noteshistory": {
+					"type": "string"
+				},
+				"createdon": {
+					"type": "string"
+				},
+				"hpi_subject": {
+					"type": "string"
+				},
+				"hpi_caseid": {
+					"type": "string"
+				},
+				"incidentid": {
+					"type": "string"
+				}
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

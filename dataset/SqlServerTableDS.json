@@ -1,0 +1,46 @@
+{
+	"name": "SqlServerTableDS",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "SQLserveronpremLS",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [
+			{
+				"name": "FIRST NAME ",
+				"type": "varchar"
+			},
+			{
+				"name": "LAST NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "USERNAME ",
+				"type": "varchar"
+			},
+			{
+				"name": "EMAIL ADDRESS",
+				"type": "varchar"
+			},
+			{
+				"name": "PHONE NUMBER",
+				"type": "varchar"
+			},
+			{
+				"name": "STATE",
+				"type": "varchar"
+			},
+			{
+				"name": "ZIP",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "users"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

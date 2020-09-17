@@ -1,0 +1,22 @@
+{
+	"name": "DestinationDataset_5oq",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorageTgt",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"container": "dineshhadoop"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"quoteChar": "\""
+		},
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
