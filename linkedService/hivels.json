@@ -1,0 +1,18 @@
+{
+	"name": "hivels",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "HDInsight",
+		"typeProperties": {
+			"clusterUri": "https://hdiclusteradfdemo.azurehdinsight.net",
+			"userName": "admin",
+			"isEspEnabled": false,
+			"linkedServiceName": {
+				"referenceName": "HDIblobstorageLS",
+				"type": "LinkedServiceReference"
+			},
+			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRJTkVTSEFERlYyXzZlNzE1M2ZiLWRkNmItNDhiYS1hMTRlLWRmMzg2MjQ5ZGE5NiINCn0="
+		}
+	}
+}

@@ -1,0 +1,17 @@
+{
+	"name": "Localfilelinkedservice",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "FileServer",
+		"typeProperties": {
+			"host": "C:\\Azure\\ADF",
+			"userId": "FAREAST\\digantep",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiJhYmU2Y2RkMS02ODcxLTQ2ZjItODUzMy1iYWQ0NzhmZDdmY2QiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "SelfhosterIR",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}

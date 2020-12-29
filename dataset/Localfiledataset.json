@@ -1,17 +1,16 @@
 {
-	"name": "BlobTargetbinaryDS",
+	"name": "Localfiledataset",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "AzureBlobStorage1",
+			"referenceName": "Localfilelinkedservice",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
 		"type": "Binary",
 		"typeProperties": {
 			"location": {
-				"type": "AzureBlobStorageLocation",
-				"folderPath": "HiveInput",
-				"container": "dineshhadoop"
+				"type": "FileServerLocation",
+				"fileName": "HivestampleInput.txt"
 			}
 		}
 	},
